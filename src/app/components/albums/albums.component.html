@@ -1,0 +1,13 @@
+<h1>Albums</h1>
+
+<mat-spinner class="spinner" *ngIf="isLoading == true"></mat-spinner>
+
+<ul [@listStagger]= "albums">
+  <li *ngFor="let album of albums">
+    <ul>
+      <li>
+        <strong>Album Title:</strong> {{ album.title }}
+      </li>
+    </ul>
+  </li>
+</ul>

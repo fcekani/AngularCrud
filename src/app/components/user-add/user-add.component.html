@@ -1,0 +1,30 @@
+<div class="adduser-container">
+    <mat-grid-list cols="4" rowHeight="100px" color="primary">
+        <form (ngSubmit) =  "onSubmit()">
+        <mat-grid-tile>
+            <mat-form-field>
+                <input matInput placeholder="Name" type="text" [(ngModel)]="u.name" name="name"/>
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field>
+                <input matInput placeholder="Username" type="text" [(ngModel)]="u.username" name="username" />
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field>
+                <input matInput placeholder="Email" type="text" [(ngModel)]="u.email" name="email" />
+              </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <mat-form-field>
+              <input matInput placeholder="Phone" type="number" [(ngModel)]="u.phone" name="phone" />
+            </mat-form-field>
+          </mat-grid-tile>
+        <mat-grid-tile colspan="4">
+          <button mat-stroked-button color="primary" type="submit">Add User</button>
+          </mat-grid-tile>
+          </form>
+    </mat-grid-list>
+</div>
+  

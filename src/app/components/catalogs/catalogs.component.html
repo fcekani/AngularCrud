@@ -1,0 +1,18 @@
+<h1>Catalogs</h1>
+
+<ul [@listStagger]= "catalogs">
+  <li *ngFor="let catalog of catalogs">
+    <ul>
+      <li>
+        <strong>Catalog Id: </strong>{{ catalog.Id }}
+      </li>
+      <li>
+        <strong>Catalog Name: </strong>{{ catalog.Name }}
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<ul *ngIf="nodata">
+  <li><strong>{{ nodata }}</strong></li>
+</ul>

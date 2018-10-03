@@ -1,0 +1,12 @@
+.adduser-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+.adduser-container > * {
+    width: 100%;
+  }
+
+  button{
+    width: 100%;
+  }

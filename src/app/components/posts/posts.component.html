@@ -1,0 +1,10 @@
+<h1>Posts</h1>
+
+<mat-spinner class="spinner" *ngIf="isLoading == true"></mat-spinner>
+
+<ul [@listStagger]= "posts">
+  <li *ngFor="let post of posts">
+    <a routerLink="/comments/{{post.id}}">{{ post.title }}</a>
+    <p> {{ post.body }}</p>
+  </li>
+</ul>

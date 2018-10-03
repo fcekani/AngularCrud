@@ -1,0 +1,47 @@
+<mat-progress-bar mode="indeterminate" *ngIf="isLoading == true"></mat-progress-bar>
+
+<div *ngIf="users">
+  <h1>Users</h1>
+
+  <a mat-stroked-button routerLink="/newuser">Add User</a>
+  <br/>
+  <br/>
+
+  <!--<mat-spinner class="spinner" *ngIf="isLoading == true"></mat-spinner>-->
+
+
+  <div *ngFor="let user of users">
+
+  <!--Mat Card Component-->
+  <mat-card  class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{ user.name }}</mat-card-title>
+      <mat-card-subtitle>{{ user.email }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <p>
+    
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-raised-button color="primary" routerLink="/details/{{user.id}}">Details</a>
+      <a mat-raised-button color="warn" href="http://{{ user.website }}">Website</a>
+    </mat-card-actions>
+    </mat-card>
+    <br/>
+    <mat-divider></mat-divider>
+  </div>
+</div>
+
+<!--<ul [@listStagger]= "users">
+  <li *ngFor="let user of users">
+    <a routerLink="/details/{{user.id}}">{{ user.name }}</a>
+
+    <ul>
+      <li>{{ user.email }}</li>
+      <li><a href="http://{{ user.website }}">{{ user.website }}</a></li>
+    </ul>
+  </li>
+</ul>-->

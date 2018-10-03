@@ -1,0 +1,29 @@
+<nav>
+    <ul>
+      <li>
+        <a matTooltip="Users" [matTooltipShowDelay]="300" routerLink="" [class.activated]="currentUrl == '/'">
+          <i class="material-icons">supervised_user_circle</i>
+        </a>
+      </li>
+      <li>
+        <a matTooltip="Posts" [matTooltipShowDelay]="300" routerLink="posts" [class.activated]="currentUrl == '/posts'">
+          <i class="material-icons">message</i>
+        </a>
+      </li>
+      <li>
+        <a matTooltip="Albums" [matTooltipShowDelay]="300" routerLink="albums" [class.activated]="currentUrl == '/albums'">
+          <i class="material-icons">photo_album</i>
+        </a>
+      </li>
+      <li>
+        <a matTooltip="Photos" [matTooltipShowDelay]="300" routerLink="photos" [class.activated]="currentUrl == '/photos'">
+          <i class="material-icons">picture_in_picture</i>
+        </a>
+      </li>
+      <li>
+        <a matTooltip="Catalogs" [matTooltipShowDelay]="300" routerLink="catalogs" [class.activated]="currentUrl == '/catalogs'">
+          <i class="material-icons">library_books</i>
+        </a>
+      </li>
+    </ul>
+  </nav>

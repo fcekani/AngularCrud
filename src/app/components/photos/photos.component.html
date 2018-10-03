@@ -1,0 +1,10 @@
+<h1>Photos</h1>
+
+    <mat-spinner class="spinner" *ngIf="isLoading == true"></mat-spinner>
+
+      <ul *ngFor="let photo of photos">
+        <li>
+          <strong>Title:</strong> {{ photo.title }} <br/>
+          <strong>Image:</strong><br/>
+          <img src="{{ photo.thumbnailUrl }}" /></li>
+      </ul>
