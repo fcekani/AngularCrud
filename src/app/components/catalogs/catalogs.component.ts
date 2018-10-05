@@ -36,7 +36,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class CatalogsComponent implements OnInit {
 
   isLoading: boolean
-  nodata: Object
+  nodata: string
   requestData = new Requestdata
   catalogs: any
   configuration = new Configuration
@@ -60,7 +60,6 @@ export class CatalogsComponent implements OnInit {
     this.requestData.url = this.configuration.MiddlewareIP + ":" + this.configuration.MiddlewarePort + "/data/catalogs" //"http://85.131.135.186:5505/data/catalogs"
     this.requestData.methodType = "GET"
     this.requestData.credentials = { "Username": this.configuration.Username, "Password" : this.configuration.Password}
-    this.requestData.credentials.Password = this.configuration.Password
 
     this.data.getCatalogs(this.requestData).subscribe(
       data => {

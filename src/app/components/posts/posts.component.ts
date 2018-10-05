@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { User } from '../../models/user';
+import { post } from 'selenium-webdriver/http';
 
 @Component({
   selector: 'app-posts',
@@ -33,7 +35,7 @@ import { trigger,style,transition,animate,keyframes,query,stagger } from '@angul
 export class PostsComponent implements OnInit {
 
   isLoading: boolean
-  posts: Object
+  posts
 
   constructor(private data: DataService) { }
 
@@ -46,8 +48,16 @@ export class PostsComponent implements OnInit {
         data => {
           this.isLoading = false
           if(data){
-            localStorage.setItem('posts', JSON.stringify(data))
             this.posts = data
+            this.posts.forEach(element => {
+              this.data.getUser(element.userId).subscribe(
+                userData => {
+                  element.user = userData
+                }
+              )
+            });
+
+            localStorage.setItem('posts', JSON.stringify(this.posts))
           }
         }
       )

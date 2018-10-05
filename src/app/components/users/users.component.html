@@ -21,9 +21,10 @@
     </mat-card-header>
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
-      <p>
-    
-      </p>
+      <span><strong>Street:</strong> {{user.address.street}}</span><br/>
+      <span><strong>Suite:</strong> {{user.address.suite}}</span><br/>
+      <span><strong>Phone:</strong> {{user.phone}}</span><br/>
+      <span><strong>Works at:</strong> {{user.company.name}}</span>
     </mat-card-content>
     <mat-card-actions>
       <a mat-raised-button color="primary" routerLink="/details/{{user.id}}">Details</a>
